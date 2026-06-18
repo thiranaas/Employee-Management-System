@@ -24,7 +24,27 @@ class Manager extends Employee{
 
 
 }
-public class Main{
+class Developer extends Employee{
+    String language;
+    Developer(int id, String name, int salary, String language){
+        super(id,name,salary);
+        this.language=language;
+    }
+    void display(){
+        System.out.println("Developer Details:\nID:"+this.id+"\nName:"+this.name+"\nSalary:"+this.salary+"\nLanguage:"+this.language);
+    }
+}
+class Intern extends Employee{
+    String duration;
+    Intern(int id, String name, int salary, String duration){
+        super(id,name,salary);
+        this.duration=duration;
+    }
+    void display(){
+        System.out.println("Intern Details:\nID:"+this.id+"\nName:"+this.name+"\nSalary:"+this.salary+"\nDuration:"+this.duration);
+    }
+}
+public class main{
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the Employee name:");
@@ -39,7 +59,24 @@ public class Main{
             sc.nextLine();
             System.out.println("Enter the Employee department:");
             String department=sc.nextLine();
-            Manager m=new Manager(id,name,salary,department);
-            m.display();
+            Manager o=new Manager(id,name,salary,department);
+            o.display();
+        }
+        else if (empc==2){
+            sc.nextLine();
+            System.out.println("Enter the Programming Language:");
+            String language=sc.nextLine();
+            Developer o=new Developer(id,name,salary,language);
+            o.display();
+        }
+        else if (empc==3){
+            sc.nextLine();
+            System.out.println("Enter the Employee's duration:");
+            String duration=sc.nextLine();
+            Intern o=new Intern(id,name,salary,duration);
+            o.display();
+        }
+        else{
+            System.out.println("Invalid Employee category");
         }
 }}
