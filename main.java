@@ -9,7 +9,7 @@ class Employee{
         this.salary=salary;
     }
     void display(){
-        System.out.println("ID:"+this.id+"\nName:"+this.name+"\nSalary:"+this.salary);
+        System.out.println("ID: "+this.id+"\nName: "+this.name+"\nSalary: "+this.salary);
     }
 }
 class Manager extends Employee{
